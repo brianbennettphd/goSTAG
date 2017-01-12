@@ -1,0 +1,8 @@
+citHeader( "Please use the following citation when using goSTAG for your research:" )
+
+citEntry(   entry = "manual",
+            author = "Brian D. Bennett and Pierre R. Bushel",
+            title = "goSTAG: Gene Ontology Subtrees to Tag and Annotate Genes within a set.",
+            year = "2017",
+            textVersion = "Bennett B and Bushel P. goSTAG: Gene Ontology Subtrees to Tag and Annotate Genes within a set. Source Code Biol Med. Under Review."
+)
