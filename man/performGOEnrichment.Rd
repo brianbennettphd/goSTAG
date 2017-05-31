@@ -12,7 +12,7 @@ performGOEnrichment(gene_lists, go_terms, filter_method = "pval", significance_t
     A list of vectors. Each element of the list corresponds to a gene list, and each vector contains the genes in the gene list.
     }
     \item{go_terms}{
-    A list of vectors. Each element of the list corresponds to a GO term, and each vector contains the genes associated with the GO term.
+    A list of vectors. Each element of the list corresponds to a GO term, and each vector contains the genes associated with the GO term. The list must also have an additional element named "ALL", which is a vector that contains all annotated genes.
     }
     \item{filter_method}{
     A value indicating whether to filter out GO terms based on a nominal p-value or an adjusted p-value. Acceptable options are "pval" (nominal p-value) or "p.adjust" (adjusted p-value).
@@ -28,7 +28,7 @@ performGOEnrichment(gene_lists, go_terms, filter_method = "pval", significance_t
 A matrix of enrichment scores. Rows correspond to GO terms and columns correspond to gene lists.
 }
 \references{
-Bennett B and Bushel P. goSTAG: Gene Ontology Subtrees to Tag and Annotate Genes within a set. Source Code Biol Med. Under Review.
+Bennett BD and Bushel PR. goSTAG: Gene Ontology Subtrees to Tag and Annotate Genes within a set. Source Code Biol Med. 2017 Apr 13.
 }
 \author{
 Brian D. Bennett\cr

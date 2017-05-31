@@ -5,5 +5,5 @@ citEntry(   entry = "article",
             title = "goSTAG: Gene Ontology Subtrees to Tag and Annotate Genes within a set",
             journal = "Source Code Biol Med",
             year = "2017",
-            textVersion = "Bennett B and Bushel P. goSTAG: Gene Ontology Subtrees to Tag and Annotate Genes within a set. Source Code Biol Med. Under Review."
+            textVersion = "Bennett BD and Bushel PR. goSTAG: Gene Ontology Subtrees to Tag and Annotate Genes within a set. Source Code Biol Med. 2017 Apr 13."
 )

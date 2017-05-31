@@ -1,4 +1,9 @@
-goSTAG v0.9.0
+goSTAG v1.0.0
 ===============
 
-First development version.
+Initial release.
+
+goSTAG v1.0.1
+===============
+
+Fixed a bug when calculating GO enrichment p-value.

@@ -22,10 +22,10 @@ loadGOTerms(species = "human", domain = "BP", min_num_genes = 5, use_archived = 
     }
 }
 \value{
-A list of vectors. Each element of the list corresponds to a GO term, and each vector contains the genes associated with the GO term.
+A list of vectors. Each element of the list corresponds to a GO term, and each vector contains the genes associated with the GO term. The list also has an additional element named "ALL", which is a vector that contains all annotated genes.
 }
 \references{
-Bennett B and Bushel P. goSTAG: Gene Ontology Subtrees to Tag and Annotate Genes within a set. Source Code Biol Med. Under Review.
+Bennett BD and Bushel PR. goSTAG: Gene Ontology Subtrees to Tag and Annotate Genes within a set. Source Code Biol Med. 2017 Apr 13.
 }
 \author{
 Brian D. Bennett\cr

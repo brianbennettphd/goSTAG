@@ -18,6 +18,9 @@ loadGOTerms = function( species = "human", domain = "BP", min_num_genes = 5, use
 
         ## Filter the GO terms to only include those in the specified domain
         go_genes = go_genes_all[ domains[names(go_genes_all)]==toupper(domain) ]
+
+        ## Add full list of all annotated genes
+        go_genes[[ "ALL" ]] = go_genes_all[[ "ALL" ]]
     } else {
         ## Set the correct BioMart dataset and gene symbol attribute for the specified species
         ensembl_dataset = switch( toupper(species),
@@ -38,17 +41,21 @@ loadGOTerms = function( species = "human", domain = "BP", min_num_genes = 5, use
 
         ## Get the complete list of GO terms and associated gene symbols from BioMart
         query = getBM( attributes = c(gene_symbol_attribute,"go_id"), mart = ensembl_mart )
+        query = query[ query[,1]!="", ]
+        query = query[ query[,2]!="", ]
 
         ## Filter the BioMart query to only include valid GO terms from the specified domain
         go_ids = unique(query[,2])
-        go_ids = go_ids[go_ids!=""]
         go_ids_filtered = go_ids[ domains[go_ids]==toupper(domain) ]
-        query = query[ query[,1]!="", ]
+        go_ids_filtered = go_ids_filtered[ ! is.na(go_ids_filtered) ]
         query_filtered = query[ query[,2] %in% go_ids_filtered, ]
 
         ## Get the list of gene annotations for each GO term
         go_genes = lapply( go_ids_filtered, function(x) unique(query_filtered[query_filtered[,2]==x,1]) )
         names(go_genes) = go_ids_filtered
+
+        ## Add full list of all annotated genes
+        go_genes[[ "ALL" ]] = unique(query[,1])
     }
 
     ## Filter out any GO term with fewer that the specified minimum number of genes

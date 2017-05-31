@@ -1,12 +1,22 @@
 performGOEnrichment = function( gene_lists, go_terms, filter_method = "pval", significance_threshold = 0.05, p.adjust_method = "BH" ) {
+    ## Separate all annotated genes from GO terms
+    if( ! is.null( go_terms[["ALL"]] ) ) {
+        all_genes = go_terms[["ALL"]]
+        go_terms[["ALL"]] = NULL
+    } else {
+        stop( "All annotated genes entry missing in GO terms list" )
+    }
+
     ## Calculate the gene list sizes and the universe size for the hypergeometric test
-    gene_list_sizes = vapply( gene_lists, length, integer(1) )
-    universe_size = length( unique(unlist(go_terms)) )
+    gene_list_sizes = vapply( gene_lists, function(x) {
+        length( intersect( toupper(x), toupper(all_genes) ) )
+    }, integer(1) )
+    universe_size = length( unique(toupper(all_genes)) )
 
     ## Calculate a p-value for each GO term and gene list using the hypergeometric test
     pvals = matrix( nrow = length(go_terms), ncol = length(gene_lists) )
     for( i in seq_len( length(go_terms) ) ) {
-        m = length( go_terms[[i]] )
+        m = length( intersect( toupper(go_terms[[i]]), toupper(all_genes) ) )
         pvals[i,] = vapply( seq_len( length(gene_lists) ), function(j) {
             x = length( intersect( toupper(go_terms[[i]]), toupper(gene_lists[[j]]) ) )
             k = gene_list_sizes[j]

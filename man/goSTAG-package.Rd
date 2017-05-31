@@ -17,7 +17,7 @@ Brian D. Bennett\cr
 Pierre R. Bushel
 }
 \references{
-Bennett B and Bushel P. goSTAG: Gene Ontology Subtrees to Tag and Annotate Genes within a set. Source Code Biol Med. Under Review.
+Bennett BD and Bushel PR. goSTAG: Gene Ontology Subtrees to Tag and Annotate Genes within a set. Source Code Biol Med. 2017 Apr 13.
 }
 \keyword{ package }
 \examples{

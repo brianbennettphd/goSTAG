@@ -28,7 +28,7 @@ loadGeneLists(location, type = "GMT", sep = "\t", header = FALSE, col = 1)
 A list of vectors. Each element of the list corresponds to a gene list, and each vector contains the genes in the gene list.
 }
 \references{
-Bennett B and Bushel P. goSTAG: Gene Ontology Subtrees to Tag and Annotate Genes within a set. Source Code Biol Med. Under Review.
+Bennett BD and Bushel PR. goSTAG: Gene Ontology Subtrees to Tag and Annotate Genes within a set. Source Code Biol Med. 2017 Apr 13.
 }
 \author{
 Brian D. Bennett\cr

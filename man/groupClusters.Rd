@@ -19,7 +19,7 @@ groupClusters(hclust_results, distance_threshold = 0.2)
 A list of vectors. Each element of the list corresponds to a cluster, and each vector contains the GO terms in the cluster.
 }
 \references{
-Bennett B and Bushel P. goSTAG: Gene Ontology Subtrees to Tag and Annotate Genes within a set. Source Code Biol Med. Under Review.
+Bennett BD and Bushel PR. goSTAG: Gene Ontology Subtrees to Tag and Annotate Genes within a set. Source Code Biol Med. 2017 Apr 13.
 }
 \author{
 Brian D. Bennett\cr
