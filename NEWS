@@ -6,4 +6,4 @@ Initial release.
 goSTAG v1.0.1
 ===============
 
-Fixed a bug when calculating GO enrichment p-value.
+Improved the calculation of the GO enrichment p-value.

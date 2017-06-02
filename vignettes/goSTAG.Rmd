@@ -1,7 +1,7 @@
 ---
 title: "The goSTAG User's Guide"
 author: "Brian D. Bennett and Pierre R. Bushel"
-date: "January 9, 2017"
+date: "June 6, 2017"
 output: 
     BiocStyle::html_document2:
         toc_float: true
@@ -76,13 +76,14 @@ gene_lists <- loadGeneLists( "/gene/lists/directory", type = "DIR", header = TRU
 
 ## GO Terms
 
-The second input data required by goSTAG is a set of GO terms and the genes associated with those GO terms. The GO terms should all belong to the same GO domain (either biological process, cellular component, or molecular function). The expected format is a list of vectors, where each list corresponds to a GO term, and the vectors contain the genes associated with the GO terms. The names of the lists should be the GO IDs of the GO terms.
+The second input data required by goSTAG is a set of GO terms and the genes associated with those GO terms. The GO terms should all belong to the same GO domain (either biological process, cellular component, or molecular function). The expected format is a list of vectors, where each list corresponds to a GO term, and the vectors contain the genes associated with the GO terms. The names of the lists should be the GO IDs of the GO terms. The list must also have an additional element named "ALL", which is a vector that contains all annotated genes.
 
 The goSTAG package provides the `loadGOTerms` function for loading the GO terms and gene associations from BioMart using the `biomaRt` package.
 
 ```{r, warning = FALSE, message = FALSE}
 go_terms <- loadGOTerms()
 head( lapply( go_terms, head ) )
+head( go_terms[["ALL"]] )
 ```
 
 Since loading the GO terms from BioMart can take several minutes, the default behavior of the `loadGOTerms` function is to use a previously generated version that has been archived in the goSTAG package, which is much faster.
