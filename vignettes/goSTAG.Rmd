@@ -1,7 +1,7 @@
 ---
 title: "The goSTAG User's Guide"
 author: "Brian D. Bennett and Pierre R. Bushel"
-date: "June 6, 2017"
+date: "June 2, 2017"
 output: 
     BiocStyle::html_document2:
         toc_float: true
