@@ -3,7 +3,7 @@ title: "The goSTAG User's Guide"
 author: "Brian D. Bennett and Pierre R. Bushel"
 date: "June 2, 2017"
 output: 
-    BiocStyle::html_document2:
+    BiocStyle::html_document:
         toc_float: true
 vignette: >
     %\VignetteIndexEntry{The goSTAG User's Guide}
@@ -185,8 +185,8 @@ length( clusters_larger_threshold )
 Whereas decreasing the distance threshold to 0.05 produces more clusters, but with fewer GO terms on average.
 
 ```{r}
-clusters_larger_threshold <- groupClusters( hclust_results_euclidean, distance_threshold = 0.05 )
-length( clusters_larger_threshold )
+clusters_smaller_threshold <- groupClusters( hclust_results_euclidean, distance_threshold = 0.05 )
+length( clusters_smaller_threshold )
 ```
 
 ## Annotating the Clusters
