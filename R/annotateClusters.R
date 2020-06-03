@@ -10,7 +10,7 @@ annotateClusters = function( clusters ) {
     ## Define the recursive function to get the number of paths to the root
     get_num_paths = memoise( function( go_id ) {
         this_parents = parents[[go_id]]
-        this_parents = this_parents[ names(this_parents) == "is_a" ]
+        this_parents = this_parents[ names(this_parents) == "isa" ]
         if( this_parents[1] == "all" ) {
             1L
         } else {
