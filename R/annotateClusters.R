@@ -11,7 +11,7 @@ annotateClusters = function( clusters ) {
     get_num_paths = memoise( function( go_id ) {
         this_parents = parents[[go_id]]
         this_parents = this_parents[ names(this_parents) == "isa" ]
-        if( is.na( this_parents[1] ) ) {
+        if( this_parents[1] == "all" ) {
             1L
         } else {
             sum( vapply( this_parents, get_num_paths, integer(1) ) )
