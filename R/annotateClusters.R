@@ -1,9 +1,9 @@
-annotateClusters = function( clusters ) {
+annotateClusters = function( clusters, ontology ) {
     ## Load the GO parents from the GO.db package
-    parents = switch( Ontology( GOTERM[ clusters[[1]][1] ] ),
-        BP = as.list(GOBPPARENTS),
-        CC = as.list(GOCCPARENTS),
-        MF = as.list(GOMFPARENTS),
+    parents = switch( ontology,
+        "BP" = as.list(GOBPPARENTS),
+        "CC" = as.list(GOCCPARENTS),
+        "MF" = as.list(GOMFPARENTS),
         stop( "Invalid domain" )
     )
 
